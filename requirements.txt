@@ -1,10 +1,11 @@
---extra-index-url https://download.pytorch.org/whl/cu126
-
-torch>=2.0.0
-torchvision>=0.15.0
+# PyTorch 2.10 / TorchVision 0.25 are the first releases in this project
+# with Python 3.14 support. Install from PyPI so pip selects the right build
+# for macOS, Windows, or Linux (the CUDA index is NVIDIA-GPU-specific).
+torch>=2.10.0
+torchvision>=0.25.0
 opencv-python>=4.8.0
 mediapipe>=0.10.0
-numpy>=1.24.0,<2.0.0
+numpy>=1.24.0
 pandas>=2.0.0
 scikit-learn>=1.3.0
 lsfb-dataset

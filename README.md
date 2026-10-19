@@ -67,12 +67,27 @@ We work on **coordinates, not raw pixels**. That decision is what made the proje
 
 ## Quick start
 
+Python 3.13 and 3.14 are supported. On macOS, use `python3` to create a
+project-local environment; this keeps the packages separate from your system
+Python and makes them easy to remove when you are done.
+
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 python inference.py
 ```
 
-Runs live webcam recognition with the trained model in `models/spoter/`. It collects 60 frames (~2 s), predicts, then resets automatically. Top-5 candidates are displayed with confidence bars. Press `c` to reset the buffer manually, `q` to quit.
+On Windows PowerShell, activate the environment with
+`.\.venv\Scripts\Activate.ps1` instead of `source .venv/bin/activate`. Runs
+live webcam recognition with the trained model in `models/spoter/`. It collects
+60 frames (~2 s), predicts, then resets automatically. Top-5 candidates are
+displayed with confidence bars. Press `c` to reset the buffer manually, `q` to
+quit.
+
+To remove the installed project packages later, deactivate the environment
+and delete the `.venv` folder from this repository.
 
 <details>
 <summary><b>Full pipeline: data preparation and training</b></summary>
